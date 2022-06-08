@@ -1,14 +1,14 @@
 resource "aws_security_group" "allow_http" {
   name        = "allow_http_only"
   description = "Allow http inbound traffic"
-#   vpc_id      = aws_vpc.main.id
+  #   vpc_id      = aws_vpc.main.id
 
   ingress {
-    description      = "TLS from VPC"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    description = "TLS from VPC"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
     # ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
   }
 
